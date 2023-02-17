@@ -1,0 +1,17 @@
+<!-- Content Heading for classification view -->
+<% if (title) { %>
+    <h1><%= data.rows[0].inv_year + " " + title %></h1>
+    <% } else {
+      res.redirect('')
+    } %>
+    
+
+<!-- Message block for notices and error handling -->
+<% if (message) { %>
+    <p class="notice"><%= message %></p>
+
+<% } %>
+
+<!-- Vehicles Display Code Block-->
+
+<%- page %>

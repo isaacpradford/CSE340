@@ -6,9 +6,9 @@
  * Require Statements
  *************************/
 const express = require("express")
+const expressLayouts = require("express-ejs-layouts")
 const env = require("dotenv").config()
 const app = express()
-const expressLayouts = require("express-ejs-layouts")
 const baseController = require("./controllers/baseController")
 
 /* ***********************
@@ -22,15 +22,12 @@ app.set("layout", "./layouts/layout")
 /* ***********************
 * Routes
 *************************/
-
 app.use(require("./routes/static"))
-
-
 // Index Route
 app.get("/", baseController.buildHome)
-
 // Inventory routes
 app.use("/inv", require("./routes/inventory-route"))
+
 
 // Account routes
 // app.use("/client", require("./routes/account-route"))
