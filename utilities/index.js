@@ -6,9 +6,9 @@ const Util = {}
  ************************** */
 Util.buildNav = function (data) {
   let list = "<ul>"
-  list += '<li><a href="/" title="Home page">Home</a></li>'
+  list += '<li class="navList"><a href="/" title="Home page">Home</a></li>'
   data.rows.forEach((row) => {
-    list += "<li>"
+    list += "<li class='navList'>"
     list +=
       '<a href="/inv/type/' +
       row.classification_id +
@@ -40,12 +40,11 @@ Util.getNav = async function (req, res, next) {
 Util.getVehiclePage = async function (data) {
   let page = `
   <img src="${data.rows[0].inv_image}" alt="Image of ${data.rows[0].inv_make + "" + data.rows[0].inv_model}"></img>
-  <p>Price: $${new Intl.NumberFormat('en-US').format(data.rows[0].inv_price)}</p>
-  <p>Color: ${data.rows[0].inv_color}</p>
-  <p>Miles: ${new Intl.NumberFormat('en-US').format(data.rows[0].inv_miles)}</p>
-  <p>${data.rows[0].inv_description}</p>
+  // <p>Price: $${new Intl.NumberFormat('en-US').format(data.rows[0].inv_price)}</p>
+  // <p>Color: ${data.rows[0].inv_color}</p>
+  // <p>Miles: ${new Intl.NumberFormat('en-US').format(data.rows[0].inv_miles)}</p>
+  // <p>${data.rows[0].inv_description}</p>
   `
-
   return page;
 }
 

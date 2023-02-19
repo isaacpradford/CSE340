@@ -18,13 +18,17 @@ app.set("view engine", "ejs")
 app.use(expressLayouts)
 app.set("layout", "./layouts/layout")
 
+app.use('/public', express.static('public'));
 
 /* ***********************
 * Routes
 *************************/
 app.use(require("./routes/static"))
+
 // Index Route
 app.get("/", baseController.buildHome)
+
+
 // Inventory routes
 app.use("/inv", require("./routes/inventory-route"))
 
