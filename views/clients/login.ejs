@@ -1,5 +1,5 @@
 <% if (title) { %>
-    <h1><%= title %></h1>
+    <h1 class="title" ><%= title %></h1>
     <% } else {
       res.redirect('/')
     } %>
@@ -8,10 +8,13 @@
     <p class="notice"><%= message %></p>
 <% } %>
 
-<form action="#" method="post">
-    <label for="client_username">Username</label>
-    <input type="text" name="client_username" id="client_username">
-    <label for="client_password">Password</label>
-    <input type="password" name="client_password" id="client_password">
-    <input type="submit" value="Login">
-</form>
+<div class="login-table">
+    <form action="#" method="post" class="login-form">
+        <label for="client_username">Username</label>
+        <input type="text" name="client_username" id="client_username" autofocus>
+        <label for="client_password">Password</label>
+        <input type="password" name="client_password" id="client_password">
+        <input type="submit" value="Login" class="submit">
+        <span><div>Don't have an account?<a href="/client/register" class="register-button"> Sign up here:</a></div></span>
+    </form>
+</div>

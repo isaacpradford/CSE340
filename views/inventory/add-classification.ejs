@@ -1,0 +1,17 @@
+<% if (title) { %>
+    <h1 class="title"><%= title %></h1>
+    <% } else {
+      res.redirect('/')
+    } %>
+    
+<% if (message) { %>
+    <p class="notice"><%= message %></p>
+<% } %>
+
+<div class="add-classification-table">
+    <form action="/inv/add-class" method="post">
+        <label for="classification_name">Classification Name:</label>
+        <input type="text" name="classification_name" id="classification_name" autofocus required>
+        <input type="submit" value="Register" id="submit">
+    </form>
+</div>

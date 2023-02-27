@@ -23,7 +23,6 @@ Util.buildNav = function (data) {
   return list
 }
 
-
 /* ************************
  * Builds the navigation bar
  ************************** */
@@ -48,4 +47,25 @@ Util.getVehiclePage = async function (data) {
   return page;
 }
 
+
+/* ***************************************
+* Builds the vehicle registration page
+********************************** */
+
+Util.buildVehicleRegisterSelection = async function (data) {
+  let select = "<select name='selectList' id='selectList'>"
+  data.rows.forEach((row) => {
+      select += "<option value='" + row.classification_id + "' required>" + row.classification_id + " " + row.classification_name + "</option>"
+  })
+  select += "</select>"
+  return select;
+}
+
+Util.getVehicleRegisterSelect = async function(req, res, next) {
+  let data = await invModel.getClassifications()
+  let select = Util.buildVehicleRegisterSelection(data)
+
+  return select;
+}
+ 
 module.exports = Util;

@@ -1,5 +1,3 @@
-
-
 body {
   background-image: url("/images/site/small_check.jpg");
   z-index: -3;
@@ -31,6 +29,11 @@ header {
 
 .accountLink > a:link {
   text-decoration: none;
+}
+
+.title {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
 }
 
 .accountLink > a:hover {
@@ -190,9 +193,91 @@ button:hover {
 
 
 #inv-display {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: block;
+  margin: auto;
+}
+
+.login-table{
+  width: 300px;
+  height: 350px;
+  background-color: #4c96d7;
+  display: block;
+  margin: auto;
+  border: 3px #437aa9 solid;
+  border-radius: 15px;
+  text-align: center;
+  filter: drop-shadow(30px 10px 4px rgba(0, 0, 0, 0.225));
+}
+
+.login-form * {
+  display: block;
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  padding: 10px;
+
+}
+.login-form {
+  font-size: 14px;
+  color: white;
+}
+
+.register-button {
+  padding-top: 10px;
+  text-align: center;
+}
+.register-button:visited {
+  color: white;
+  text-decoration: none;
+}
+.register-button:hover {
+  color: white;
+  background-color: #437aa9;
+  text-decoration: none;
+}
+
+
+.register-table{
+  width: 300px;
+  height: 420px;
+  background-color: #4c96d7;
+  display: block;
+  margin: auto;
+  border: 3px #437aa9 solid;
+  border-radius: 15px;
+  text-align: center;
+  filter: drop-shadow(30px 10px 4px rgba(0, 0, 0, 0.225));
+}
+
+.register-form * {
+  display: block;
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.register-form {
+  font-size: 14px;
+  color: white;
+}
+
+.notice {
+  text-align: center;
+}
+
+.management-text {
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.management-text > h1 {
+  font-size: 40px;
+}
+.management-text > span {
+  font-size: 25px;
+  padding: 20px;
 }
 
 .cards {
@@ -210,7 +295,6 @@ button:hover {
   width: 300px;
   height: 400px;
 }
-
 
 .thumbnailBox {
   display: flex;
@@ -250,6 +334,7 @@ h2 > a {
 .reviews > ul > li {
   padding: 10px;
 }
+
 .reviews {
   grid-row: 1;
   grid-column: 2;
@@ -318,6 +403,14 @@ h2 > a {
   max-width: 500px;
   height: auto;
 
+}
+
+#vehicle-registration-table * {
+  text-align: center;
+  display: block;
+  margin: auto;
+
+  padding: 10px;
 }
 
 

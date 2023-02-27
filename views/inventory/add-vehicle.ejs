@@ -1,0 +1,46 @@
+<% if (title) { %>
+    <h1 class="title"><%= title %></h1>
+    <% } else {
+      res.redirect('/')
+    } %>
+    
+<% if (message) { %>
+    <p class="notice"><%= message %></p>
+<% } %>
+
+<div id="vehicle-registration-table">
+    <form action="/inv/add-vehicle" method="post">
+        <label for="classification_name">Choose a classification: </label>
+        
+        <%- select %>
+
+        <label for="text">Make:</label>
+        <input type="text" name="inv_make" id="inv_make" required>
+
+        <label for="text">Model:</label>
+        <input type="text" name="inv_model" id="inv_model" required>
+
+        <label for="text">Description:</label>
+        <input type="text" name="inv_description" id="inv_description" required>
+
+        <label for="text">Image Path:</label>
+        <input type="text" name="inv_image" id="inv_image" required>
+
+        <label for="text">Thumbnail Path:</label>
+        <input type="text" name="inv_thumbnail" id="inv_thumbnail" required>
+
+        <label for="text">Price:</label>
+        <input type="text" name="inv_price" id="inv_price" required>
+
+        <label for="text">Year:</label>
+        <input type="text" name="inv_year" id="inv_year" required>
+
+        <label for="text">Miles:</label>
+        <input type="text" name="inv_miles" id="inv_miles" required>
+
+        <label for="text">Color:</label>
+        <input type="text" name="inv_color" id="inv_color" required>
+        
+        <input type="submit" value="Register" id="submit">
+    </form>
+</div>

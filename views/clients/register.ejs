@@ -1,0 +1,23 @@
+<% if (title) { %>
+    <h1 class="title"><%= title %></h1>
+    <% } else {
+      res.redirect('/')
+    } %>
+    
+<% if (message) { %>
+    <p class="notice"><%= message %></p>
+<% } %>
+
+<div class="register-table">
+    <form action="/client/register" method="post" class="register-form">
+        <label for="client_firstname">First Name:</label>
+        <input type="text" name="client_firstname" id="client_firstname" autofocus required>
+        <label for="client_lastname">Last Name:</label>
+        <input type="text" name="client_lastname" id="client_lastname" required>
+        <label for="client_email">Email:</label>
+        <input type="email" name="client_email" id="client_email" required>
+        <label for="client_password">Password:</label>
+        <input type="password" name="client_password" id="client_password"  title="Password requirements are as follows: 12 characters in length minimum, at least one capital letter, at least one number, and at least one special character." required>
+        <input type="submit" value="Register" id="submit">
+    </form>
+</div>
