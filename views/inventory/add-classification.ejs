@@ -4,14 +4,20 @@
       res.redirect('/')
     } %>
     
-<% if (message) { %>
-    <p class="notice"><%= message %></p>
-<% } %>
+    <% if (errors) { %>
+        <ul class="notice">
+       <% errors.array().forEach(error => { %>
+         <li><%= error.msg %></li>
+      <%  }) %>
+       </ul>
+      <% } %>
 
 <div class="add-classification-table">
     <form action="/inv/add-class" method="post">
         <label for="classification_name">Classification Name:</label>
-        <input type="text" name="classification_name" id="classification_name" autofocus required>
+        <hr>
+        <span>Name must be alphabetic characters only.</span>
+        <input type="text" name="classification_name" id="classification_name" autofocus required pattern="([a-zA-z]+[^0-9]{3,})" placeholder="Classification" >
         <input type="submit" value="Register" id="submit">
     </form>
 </div>

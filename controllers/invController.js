@@ -49,7 +49,8 @@ invCont.buildClassRegister = async function (req, res, next) {
     res.render("../views/inventory/add-classification.ejs", {
         title: "Register",
         nav, 
-        message: null 
+        message: null,
+        errors: null,
     })
 }
 
@@ -66,6 +67,7 @@ invCont.registerNewClassification = async function(req, res) {
           nav,
           message: `Congratulations, you\'re registered ${classification_name}.`,
           errors: null,
+
         })
       } else {
         const message = "Sorry, the registration failed."
@@ -78,6 +80,9 @@ invCont.registerNewClassification = async function(req, res) {
     }
 }
 
+
+
+
 // Build the Vehicle registration view
 invCont.buildVehicleRegister = async function(req, res) {
     let nav = await utilities.getNav()
@@ -87,7 +92,8 @@ invCont.buildVehicleRegister = async function(req, res) {
         title: "Vehicle Register",
         nav,
         select: select,
-        message: null
+        message: null,
+        errors: null
     })
 }
 

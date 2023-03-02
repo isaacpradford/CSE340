@@ -4,9 +4,14 @@
       res.redirect('/')
     } %>
     
-<% if (message) { %>
-    <p class="notice"><%= message %></p>
-<% } %>
+    <% if (errors) { %>
+        <ul class="notice">
+       <% errors.array().forEach(error => { %>
+         <li><%= error.msg %></li>
+      <%  }) %>
+       </ul>
+      <% } %>
+
 
 <div id="vehicle-registration-table">
     <form action="/inv/add-vehicle" method="post">
@@ -15,31 +20,31 @@
         <%- select %>
 
         <label for="text">Make:</label>
-        <input type="text" name="inv_make" id="inv_make" required>
+        <input type="text" name="inv_make" id="inv_make" required value="<%= locals.inv_make%>" placeholder="Min of 3 characters" pattern="([a-zA-z]+[^0-9]{3,})">
 
         <label for="text">Model:</label>
-        <input type="text" name="inv_model" id="inv_model" required>
+        <input type="text" name="inv_model" id="inv_model" required value="<%= locals.inv_model%>" placeholder="Min of 3 characters" pattern="([a-zA-z]+[^0-9]{3,})">
 
         <label for="text">Description:</label>
-        <input type="text" name="inv_description" id="inv_description" required>
+        <textarea name="inv_description" id="inv_description" cols="30" rows="10"><%=locals.inv_description%></textarea>
 
         <label for="text">Image Path:</label>
-        <input type="text" name="inv_image" id="inv_image" required>
+        <input type="text" name="inv_image" id="inv_image" required value="<%= locals.inv_image%>">
 
         <label for="text">Thumbnail Path:</label>
-        <input type="text" name="inv_thumbnail" id="inv_thumbnail" required>
+        <input type="text" name="inv_thumbnail" id="inv_thumbnail" required value="<%= locals.inv_thumbnail%>">
 
         <label for="text">Price:</label>
-        <input type="text" name="inv_price" id="inv_price" required>
+        <input type="text" name="inv_price" id="inv_price" required value="<%= locals.inv_price%>" placeholder="Decimals or Integers" pattern="(^[0-9]\d*\.?\d*$)">
 
         <label for="text">Year:</label>
-        <input type="text" name="inv_year" id="inv_year" required>
+        <input type="text" name="inv_year" id="inv_year" required value="<%= locals.inv_year%>" placeholder="4-digit Year" pattern="([0-9]{4,4})">
 
         <label for="text">Miles:</label>
-        <input type="text" name="inv_miles" id="inv_miles" required>
+        <input type="text" name="inv_miles" id="inv_miles" required value="<%= locals.inv_miles%>" placeholder="Digits Only" pattern="([0-9.]{1,})">
 
         <label for="text">Color:</label>
-        <input type="text" name="inv_color" id="inv_color" required>
+        <input type="text" name="inv_color" id="inv_color" required value="<%= locals.inv_color%>" pattern="([a-zA-z]+[^0-9]{3,})">
         
         <input type="submit" value="Register" id="submit">
     </form>

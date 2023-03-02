@@ -73,4 +73,21 @@ async function registerNewVehicle(
   }
 
 
-module.exports = {getClassifications, getVehiclesByClassificationId, getVehiclesByInv_id, registerNewClassification, registerNewVehicle}
+/* **********************
+ *   Check for existing classification
+ * ********************* */
+async function checkExistingClassification(classification_name){
+  try {
+    const sql = "SELECT * FROM classification WHERE classification_name = $1"
+    const className = await pool.query(sql, [classification_name])
+    return className.rowCount
+  } catch (error) {
+    return error.message
+  }
+}
+
+
+
+
+
+module.exports = {getClassifications, getVehiclesByClassificationId, getVehiclesByInv_id, registerNewClassification, checkExistingClassification, registerNewVehicle}

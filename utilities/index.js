@@ -1,4 +1,5 @@
 const invModel = require("../models/inventory-model")
+
 const Util = {}
 
 /* ************************
@@ -53,9 +54,9 @@ Util.getVehiclePage = async function (data) {
 ********************************** */
 
 Util.buildVehicleRegisterSelection = async function (data) {
-  let select = "<select name='selectList' id='selectList'>"
+  let select = "<select name='selectList' id='selectList'> "
   data.rows.forEach((row) => {
-      select += "<option value='" + row.classification_id + "' required>" + row.classification_id + " " + row.classification_name + "</option>"
+      select += "<option value='" + row.classification_id + "' required>" + row.classification_name + "</option>"
   })
   select += "</select>"
   return select;

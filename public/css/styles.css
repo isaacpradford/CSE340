@@ -1,3 +1,4 @@
+
 body {
   background-image: url("/images/site/small_check.jpg");
   z-index: -3;
@@ -33,6 +34,11 @@ header {
 
 .title {
   font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.notice {
+  list-style: none;
   text-align: center;
 }
 
@@ -262,9 +268,6 @@ button:hover {
   color: white;
 }
 
-.notice {
-  text-align: center;
-}
 
 .management-text {
   text-align: center;
@@ -331,9 +334,9 @@ h2 > a {
   text-align: center;
 } 
 
-.reviews > ul > li {
+/* .reviews > ul > li {
   padding: 10px;
-}
+} */
 
 .reviews {
   grid-row: 1;
@@ -411,6 +414,10 @@ h2 > a {
   margin: auto;
 
   padding: 10px;
+}
+
+input:required:valid {
+  background-color: rgb(155, 255, 155);
 }
 
 
